@@ -11,7 +11,7 @@ type Props = {
 const Header = ({ zipcode, setZip, setSearch, setData }: Props) => {
   return (
     <header className='h-[30%] header'>
-      <div className='image'></div>
+      <div className='topDesign'></div>
       <div className='flex justify-center items-center h-full'>
         <div className='bg-white border-[#194D77] border-2 w-[300px] h-[40px] flex justify-between items-center'>
           <img src="search.png" alt="search" style={{ height: '25px', marginLeft: '5px' }} />
