@@ -5,19 +5,20 @@ import "react-activity/dist/library.css";
 type DataProp = {
   data: Data | undefined,
   loading: boolean,
-  error: boolean
+  error: boolean,
+  errorTxt: TypeError | undefined,
 }
 
-const Main = ({ data, loading, error }: DataProp) => {
+const Main = ({ data, loading, error, errorTxt }: DataProp) => {
   const HandleMainComponent = () => {
     if (loading) {
-      return (<Spinner size={25}/>)
+      return (<Spinner size={25} />)
     } else {
       if (error) {
         return (
           <>
             <img src="warning.png" alt="error" />
-            <div className="text-gray-600 text-lg m-3">Error! Not Found!</div>
+            <div className="text-gray-600 text-lg m-3">Error! {errorTxt?.message}!</div>
           </>
         )
       } else if (data === undefined) {

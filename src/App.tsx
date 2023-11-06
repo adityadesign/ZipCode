@@ -23,6 +23,7 @@ function App() {
   const [data, setData] = useState<Data | undefined>()
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<boolean>(false)
+  const [errorTxt, setErrorTxt] = useState<TypeError | undefined>()
 
   useEffect(() => {
     if (search) {
@@ -30,7 +31,7 @@ function App() {
       setError(false)
       fetch(`https://api.zippopotam.us/in/${zipcode}`)
         .then(res => {
-          if(res.ok){
+          if (res.ok) {
             return res.json()
           }
           throw new Error('Not Found')
@@ -44,15 +45,16 @@ function App() {
           setLoading(false)
           setError(true)
           setSearch(false)
-          console.log(err)
+          console.error('There was a problem with the Fetch operation:', err);
+          setErrorTxt(err)
         })
     }
   }, [search])
 
   return (
     <div className='h-screen'>
-      <Header zipcode={zipcode} setZip={setZipcode} setSearch={setSearch} setData={setData}/>
-      <Main data={data} loading={loading} error={error} />
+      <Header zipcode={zipcode} setZip={setZipcode} setSearch={setSearch} setData={setData} />
+      <Main data={data} loading={loading} error={error} errorTxt={errorTxt} />
     </div>
   )
 }
