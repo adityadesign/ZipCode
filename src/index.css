@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: #EBF0F3;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.header{
+  background-image: url('background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.image{
+  height: 10px;
+  position: absolute;
+  width: 100%;
+  background-image: url(data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22yes%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20104%208%22%20style%3D%22zoom%3A%201%3B%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23ff4f4f%3B%7D.cls-2%7Bfill%3A%2310477a%3B%7D.cls-3%7Bfill%3A%23fff%3Bopacity%3A0%3B%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Ered-blue-line-pattern%3C/title%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Capa_1%22%20data-name%3D%22Capa%201%22%3E%3Cpolygon%20class%3D%22cls-1%22%20points%3D%2216%208%200%208%205%200%2021%200%2016%208%22%3E%3C/polygon%3E%3Cpolygon%20class%3D%22cls-2%22%20points%3D%2242%208%2026%208%2031%200%2047%200%2042%208%22%3E%3C/polygon%3E%3Cpolygon%20class%3D%22cls-1%22%20points%3D%2268%2C8%2052%2C8%2057%2C0%2073%2C0%2068%2C8%20%22%3E%3C/polygon%3E%3Cpolygon%20class%3D%22cls-2%22%20points%3D%2294%208%2078%208%2083%200%2099%200%2094%208%22%3E%3C/polygon%3E%3Cpolygon%20class%3D%22cls-3%22%20points%3D%22109%208%2094%208%2099%200%20109%200%20109%208%22%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E);
+}
+
+input:focus{
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
