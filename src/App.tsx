@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className='h-screen'>
-      <Header zipcode={zipcode} setZip={setZipcode} setSearch={setSearch} setData={setData} />
+      <Header zipcode={zipcode} setZip={setZipcode} setSearch={setSearch} setData={setData} setError={setError}/>
       <Main data={data} loading={loading} error={error} errorTxt={errorTxt} />
     </div>
   )

@@ -5,10 +5,17 @@ type Props = {
   zipcode: string,
   setZip: React.Dispatch<React.SetStateAction<string>>,
   setSearch: React.Dispatch<React.SetStateAction<boolean>>,
-  setData: React.Dispatch<React.SetStateAction<undefined | Data>>
+  setData: React.Dispatch<React.SetStateAction<undefined | Data>>,
+  setError: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Header = ({ zipcode, setZip, setSearch, setData }: Props) => {
+const Header = ({ zipcode, setZip, setSearch, setData, setError }: Props) => {
+  const handleClose = () => {
+    setZip('')
+    setData(undefined)
+    setError(false)
+  }
+
   return (
     <header className='h-[30%] header'>
       <div className='topDesign'></div>
@@ -24,7 +31,7 @@ const Header = ({ zipcode, setZip, setSearch, setData }: Props) => {
             onChange={(e) => setZip(e.target.value)} />
           {
             zipcode.length > 0 &&
-            <div className="w-[30px] m-1" onClick={() => [setZip(''), setData(undefined)]}>
+            <div className="w-[30px] m-1 hover:cursor-pointer" onClick={() => handleClose()}>
               <img src="close.png" alt='clear' />
             </div>
           }
